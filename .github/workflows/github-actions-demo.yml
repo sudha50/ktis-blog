@@ -5,17 +5,12 @@ on:
     branches:
       - main
 jobs:
-  hugo-install :
+  hugo-install-and-compile :
     runs-on: ubuntu-latest
     steps:
       - run: sudo apt-get update -y
       - run: wget https://github.com/gohugoio/hugo/releases/download/v0.79.0/hugo_0.79.0_Linux-64bit.deb &&  sudo dpkg -i hugo_0.79.0_Linux-64bit.deb
       - run: sudo apt-get install -f
       - run: hugo version
-  hugo-compile :
-     runs-on: ubuntu-latest
-     steps:
-       - run: hugo -t anatole
-       - run: ls -ltr public
-
-  
+      - run: hugo -t anatole
+      - run: ls -ltr public
