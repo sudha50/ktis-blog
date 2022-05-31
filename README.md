@@ -1,1 +1,3 @@
 # ktis-blog
+Test message
+
